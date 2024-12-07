@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Excluir Processo</title>
+</head>
+<body>
+    <h1>Excluir Processo</h1>
+    <p>Você tem certeza que deseja excluir o processo {{ processo.nome }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar Exclusão</button>
+    </form>
+    <a href="{% url 'lista_processos' %}">Voltar</a>
+</body>
+</html>

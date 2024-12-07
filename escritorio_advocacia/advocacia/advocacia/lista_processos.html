@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Processos</title>
+</head>
+<body>
+    <h1>Lista de Processos</h1>
+    <a href="{% url 'adicionar_processo' %}">Adicionar Processo</a>
+    <ul>
+        {% for processo in processos %}
+            <li>
+                {{ processo.nome }} - {{ processo.numero }}
+                <a href="{% url 'editar_processo' processo.pk %}">Editar</a>
+                <a href="{% url 'excluir_processo' processo.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
